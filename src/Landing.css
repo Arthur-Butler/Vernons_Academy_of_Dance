@@ -1,0 +1,203 @@
+h1 {
+    padding-top: 0%;
+    font-size: 300%;
+    color: white;
+}
+
+.App-header {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:3;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.mainImage {
+    width: 90%;
+    height: 60%;
+    border-style:solid;
+    padding: 1%;
+}
+
+
+
+.btn-3 {
+    width: 130px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    font-family: Segoe Script;
+    font-style: italic;
+    margin-top: 5%;
+  }
+
+.btn-3 {
+    background: rgb(255, 255, 255);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: black;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color: rgb(255, 255, 255);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+
+
+
+.btn-one {
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    transition: all 0.3s;
+    position: relative;
+    width:10%;
+    height:10%;
+    font-size:100%;
+    margin-top: 5%;
+    border: none;
+    font-family: Segoe Script;
+    font-style: italic;
+    border-radius: 10%;
+}
+.btn-one span {
+    transition: all 0.3s;
+}
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+.btn-one:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+}
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.btn-one:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+}
+
+@media only screen and (max-width: 850px) {
+   .App-header {
+       height:100%;
+       width:100%;
+       bottom:0%;
+       top:0%;
+   }
+
+   h1{
+       font-size:200%;
+   }
+
+   .btn-one {
+    font-size:90%;
+   }
+}
+  
