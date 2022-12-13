@@ -1,5 +1,6 @@
 // import { View, Text } from 'react-native';
-import React, { useEffect, useRef }  from 'react';
+import emailjs from '@emailjs/browser';
+import React, { useRef }  from 'react';
 import { FaReadme } from "react-icons/fa";
 import "./App.scss";
 import Footer from "./Footer";
@@ -12,7 +13,7 @@ function Pricing() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_otj4n7k', 'template_3rpr0qt', form.current, 'uuxqeqPCq0d-qHJNZ').then((result) => {
+        emailjs.sendForm('service_mc9y79r', 'template_fesp2je', form.current, 'uuxqeqPCq0d-qHJNZ').then((result) => {
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
@@ -30,15 +31,16 @@ function Pricing() {
     }
 
     const btnChange =(event)=>{
-        $(".submit").attr("value","Sent");
+        $(".submit").attr("value","Submitted");
         setTimeout(function () {
             recaptchaRef.current?.reset();
-            $(".submit").attr("value","Send");
+            $(".submit").attr("value","Submit");
             $(".submit").hide(); 
             $(".from_name").val("");
+            $(".from_partner_name").val("");
+            $(".phone").val("");
             $(".email").val("");
-            $(".message").val("");
-        }, 20000);
+        }, 10000);
     }
 
     const onExpire = (value) => {
@@ -114,7 +116,7 @@ function Pricing() {
                         </center>
                         <center>
                         <p className="note" style={{display:"none"}}>* please fill in all text fields</p>
-                        <input className="submit" type="submit" value="Send" onClick={(e)=>btnChange(e)} style={{display:"none"}}/>
+                        <input className="submit" type="submit" value="SUBMIT" onClick={(e)=>btnChange(e)} style={{display:"none"}}/>
                         </center>
                     </form>
                 </div>

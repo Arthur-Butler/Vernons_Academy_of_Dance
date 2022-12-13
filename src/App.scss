@@ -88,6 +88,19 @@ html{
   color:#555;
 }
 
+.grid-container{
+  display:grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item{
+  width: 100%;
+  height: 100%;
+  border-color: #000;
+  border-width: 5px;
+  border-style: solid;
+}
+
 #footer{
   display:flex;
   flex-direction: row;
@@ -97,6 +110,9 @@ html{
   width:100%;
   font-size: 30px;
   bottom:0;
+  background:linear-gradient(-45deg, white, rgb(151, 149, 149),  rgb(51, 51, 51));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 #photos img {
@@ -203,7 +219,7 @@ a{
   position: relative;
   cursor: pointer;
   display: block;
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
 .displayFull{
@@ -313,7 +329,9 @@ ReCAPTCHA{
   margin-top: 0px;
   width: 100%;
   height:fit-content;
-  background-color: white;
+  background:linear-gradient(-45deg, white, rgb(151, 149, 149),  rgb(51, 51, 51));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: black;
   font-size: 50px;
   flex-wrap: wrap;
@@ -322,6 +340,19 @@ ReCAPTCHA{
   top: 0%;
   box-shadow: #000 0px 0px 10px 0px;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .nav:visited {
   text-decoration:underline;
@@ -513,6 +544,8 @@ p{
 .bookingDescription{
   text-align: center;
   width:80%;
+  margin-top: 5%;
+  font-size: 30px;
 }
 
 .lessons:hover .lessonHead{
@@ -798,7 +831,6 @@ p{
 }
 
 .app-interval-input {
-  -webkit-appearance: none;
   display: table-cell;
   margin: 0;
   padding: 9px;

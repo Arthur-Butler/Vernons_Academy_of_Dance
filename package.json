@@ -12,6 +12,7 @@
   "author": "ArthurButler",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -20,6 +21,7 @@
     "emailjs-com": "^3.2.0",
     "firebase": "^9.14.0",
     "jquery": "^3.6.1",
+    "node-sass": "^8.0.0",
     "react-bootstrap": "^2.6.0",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.6.0",
