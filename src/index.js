@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+const root = createRoot(document.getElementById('root'));
 import './index.css';
 import App from './ContactUs';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -16,7 +18,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab)
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <Router>
       <Landing />

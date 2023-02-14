@@ -13,18 +13,28 @@ function AboutMe() {
     $(".aboutMe").scrollTop(0);
   }
 
+  const spinnerLoad =()=>{
+    setTimeout(function () {
+      $(".spinnerBG").hide(); 
+    }, 3000);
+  }
+
   return (
     <div className="aboutMe" id="aboutMe" onLoad={scrollTop}>
         <div className='galleryBG'>
-          <img className="bgImages" src='images/1.jpg'></img>
-          <img className="bgImages" src='images/2.jpg'></img>
-          <img className="bgImages" src='images/3.jpg'></img>
-          <img className="bgImages" src='images/4.jpg'></img>
-          <img className="bgImages" src='images/5.jpg'></img>
+            <img className="bgImages" src='images/1.jpg'></img>
+            <img className="bgImages" src='images/2.jpg'></img>
+            <img className="bgImages" src='images/3.jpg'></img>
+            <img className="bgImages" src='images/4.jpg'></img>
+            <img className="bgImages" src='images/5.jpg'></img>
         </div>
         <div className='foreground'>
+            <div id="spinnerBG" className='spinnerBG'  onLoad={spinnerLoad()}>
+              <div id="floatingBarsG">
+                <img src="images/loaders.png"></img>
+              </div>
+            </div>
             <center>
-              <h1 className="aboutMeHead">ABOUT ME</h1>
               <img src='images/profile.jpg' className='selfPortrait'></img>
               <hr className='aboutMeHR'/>
               <div className="aboutMePar">

@@ -21,10 +21,11 @@ html{
 .aboutMeHR{
   width: 30%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .aboutMePar p{
-  font-size: 130%;
+  font-size: 140%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,10 +39,8 @@ html{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10%;
   width: 90%;
-  margin-top: 6%;
-  margin-bottom: 6%;
+  height: 100%;
 }
 
 .fullHeader{
@@ -109,7 +108,7 @@ html{
   position:relative;
   width:100%;
   font-size: 30px;
-  bottom:0;
+  // bottom:0;
   background:linear-gradient(-45deg, white, rgb(151, 149, 149),  rgb(51, 51, 51));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -135,6 +134,7 @@ html{
     align-items: center;
   }
 }
+
 @media (max-width: 1000px) {
   #photos {
     -moz-column-count: 3;
@@ -144,8 +144,13 @@ html{
 }
 
 .aboutMePar{
+  display: block;
   padding-top: 2%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
+  background-color: #000;
+  box-shadow:4px 4px rgba(0, 0, 0, 0.4);
+  width: 70%;
+  transform: rotateX(16deg);
 }
 
 .profilePic{
@@ -266,11 +271,11 @@ a{
   flex-direction: column;
   align-items: initial;
   width: 40%;
+  height: 100%;
   height: fit-content;
   padding-top: 2%;
   color:#000;
   background-color: rgb(255, 255, 255, 0.7);
-  height: 646.21px;
 }
 
 ReCAPTCHA{
@@ -353,6 +358,42 @@ ReCAPTCHA{
 	}
 }
 
+#spinnerBG{
+  width: 100%;
+  height:100%;
+  background-color: #000;
+  position:fixed;
+  top:0px;
+  left: 0px;
+  z-index: 3;
+}
+
+#floatingBarsG{
+	position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#floatingBarsG img{
+  animation: dance 2s linear infinite;
+  width:300px;
+  height:300px;
+}
+
+@keyframes dance {
+  0% {
+		transform: rotateY(0deg);
+	}
+
+	100% {
+		transform: rotateY(360deg);
+	}
+}
 
 .nav:visited {
   text-decoration:underline;
@@ -428,7 +469,8 @@ p{
 }
 
 .bookIcon{
-  font-size:1300%;
+  font-size: 900%;
+  margin-top: 5%;
 }
 
 .bookHead{
@@ -558,6 +600,9 @@ p{
   color:rgb(255, 255, 255)!important;
 }
 
+.grid-gallery{
+  display:none;
+}
 
 .pricingForeground{
   display: flex;
@@ -569,12 +614,10 @@ p{
   position:absolute;
   background-color: rgb(0, 0, 0, 0.8);
   width: 100%;
-  height:100%;
   top: 0%;
   bottom: 0%;
   left: 0%;
   right: 0%;
-  margin-top: 70px;
 }
 
 .play-button {
@@ -642,6 +685,12 @@ p{
   width: 65%;
 }
 
+@media (max-width: 320px) {
+  .pricingForeground {
+    height: 270% !important;
+  }
+}
+
 
 @media (max-width: 1320px) {
   .app-sandbox-content {
@@ -650,6 +699,25 @@ p{
 }
 
 @media (max-width: 425px) {
+
+  .grid-gallery{
+    display: grid;
+  }
+
+  .head {
+    flex-direction: column!important;
+    align-items: center;
+  }
+
+  .header {
+    font-size: 30px!important;
+  }
+
+  .pricingForeground {
+    height: 240%;
+    margin-top: 6%;
+  }
+
   .lessonInfo {
     display: flex;
     flex-direction: column;
@@ -660,12 +728,52 @@ p{
   }
 
   .bookingForm {
-    margin-top: 30%!important;
-    width: 75%!important;
+    width: 80% !important;
+    height: 75% !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 20%;
   }
 
   .lessons{
     width:80%!important;
+  }
+
+  .nav{
+    width: initial!important;
+  }
+
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+
+  .contactHeader {
+    font-size: 30px!important;
+  }
+
+  .contactContent {
+    width: 100%!important;
+  }
+
+  .contactForeground {
+    height: fit-content !important;
+  }
+
+  .selfPortrait {
+    width: 40%;
+  }
+
+  .book{
+    display:none;
+  }
+
+  .bookingDescription {
+    margin-top: 10%;
+    font-size: 15px;
+  }
+
+  .lessons p {
+    font-size: 15px !important;
   }
 }
 
@@ -709,11 +817,45 @@ p{
   display: none;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+  .contactForeground{
+    height: fit-content!important;
+  }
+
+  .lessons {
+    margin-bottom: 5%;
+    width: 45%!important;
+  }
+
+  .pricingForeground {
+    height: 260% !important;
+    margin-top: 6%;
+  }
+
+  .lessons p{
+    font-size: 15px!important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contactForeground{
+    height: fit-content!important;
+  }
+  
   .bookingForm {
-    margin-top: 15%;
+    // margin-top: 15%;
     padding: 8px;
     width: 59%;
+    position: fixed;
+  }
+
+  .aboutMeHR{
+    padding-top: 0.5% !important;
+    height: 0.1% !important;
+  }
+
+  .navbar {
+    font-size: 25px;
   }
 
   .bookingForm hr{
@@ -754,12 +896,48 @@ p{
     padding: 15px;
   }
 
+  // #footer {
+  //   bottom: 0px!important;
+  // }
+
   .nav {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 0;
     list-style: none;
     width: 20%;
+  }
+
+  .lessonInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .contactForeground {
+    height: 270%;
+  }
+
+  .lessons {
+    width: 30%;
+  }
+
+  .pricingForeground {
+    height: 170%;
+    margin-top: 0%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .pricingForeground{
+    height: 150%;
   }
 }
 
@@ -781,10 +959,6 @@ p{
     flex-direction: column;
   }
 
-  .lessons {
-    width: 30%;
-  }
-
   .navbar{
     flex-direction: column;
   }
@@ -798,6 +972,10 @@ p{
 
   .nav{
     padding-right: 150px;
+  }
+
+  .contactDetails{
+    margin-top: 15%;
   }
 }
 
@@ -859,10 +1037,12 @@ input.app-interval-input {
   position:fixed;
   width: 100%;
   height:100%;
+  top: 0%;
 }
 
 .selfPortrait{
   border-radius: 50%;
+  margin-top: 5%;
 }
 
 .navbar{
@@ -899,7 +1079,7 @@ input.app-interval-input {
 
 .contactForeground{
   position:absolute;
-  min-height: 100%;
+  height: 100%;
   z-index: 2;
   background-color: rgb(0, 0, 0, 0.8);
   width:100%;
@@ -1079,6 +1259,12 @@ textarea{
     width: fit-content;
   }
 
+  .galleryBG{
+    display: grid;
+    grid-template-columns: auto;
+    top: 0%;
+  }
+
   .lessons p{
     font-size: 60%;
   }
@@ -1097,6 +1283,10 @@ textarea{
   .App {
     text-align: center;
     height:100%;
+  }
+
+  .App-header {
+    background-size: 100%;
   }
 
   .closeBtn{
@@ -1121,7 +1311,7 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 75%;
     left: 0%;
     right: 0%;
   }
@@ -1144,6 +1334,10 @@ textarea{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .contactDetails {
+    margin-top: 10%;
   }
 
   .navbar {
@@ -1203,7 +1397,7 @@ textarea{
   }
 
   #footer{
-    bottom: -84px;
+    bottom: -42px;
   }
 
   .siteCreator{
@@ -1221,9 +1415,11 @@ textarea{
   }
 
   hr{
-    background-color: rgb(255, 255, 255, 0.1);
-    height:1%;
+    background-color: rgb(255, 255, 255);
+    height:0.5%;
     width:80%;
-    padding-top: 1%;
+    padding-top: 0%;
   }
 }
+
+

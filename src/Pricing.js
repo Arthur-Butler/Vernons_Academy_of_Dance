@@ -56,6 +56,10 @@ function Pricing() {
         $(".bookingFormBG").css("display","none"); 
     }
 
+    const closeFormBG = (event) => {
+        $(".bookingFormBG").hide();
+    }
+
     return (
         <div className="pricing" id="pricing">
             <div className='galleryBG'>
@@ -82,7 +86,7 @@ function Pricing() {
                         <button className='lessonBtn' onClick={()=>openForm("Private Lessons")}>BOOK NOW</button>
                     </div>
                 </div>
-                <div className='bookingFormBG'>
+                <div className='bookingFormBG' >
                     <form ref={form} onSubmit={sendEmail} className='bookingForm'>
                         <div className='bookingHeader'><h1>BOOKING FORM</h1><div onClick={()=>closeForm()} className='bookingExitBtn'>X</div></div>
                         <center><hr/></center>

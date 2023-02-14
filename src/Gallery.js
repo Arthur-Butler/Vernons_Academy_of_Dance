@@ -1,8 +1,10 @@
-// import { View, Text } from 'react-native'
-import "./Gallery.css";
+import "./GalleryTest.scss";
+import "./Book.scss";
 import React, { useState, useEffect } from 'react';
 import storage, {database} from './firebaseStorage';
 import { ref, listAll, getDownloadURL } from "firebase/storage";
+import $ from 'jquery';
+import Footer from "./Footer";
 //import { ImageGroup } from 'react-fullscreen-image'
 
 function Gallery() {
@@ -11,7 +13,6 @@ function Gallery() {
   useEffect(() => {
     getFromFirebaseStorage();
   }, []);
-
 
   const getFromFirebaseStorage = () => {
     let storageRef = ref(storage, "");
@@ -34,73 +35,117 @@ function Gallery() {
     let result = image.substring(start, end);
     let removedPrefix = result.replace("%2F", '');
     let pieceName = removedPrefix.replace(/%20/g, ' ');
-    return pieceName.toUpperCase();
+    let number = pieceName.replace("https://firebasestorage.googleapis.com/v0/b/vernonsacademy.appspot.com/o/", '');
+    return number;
   }
 
-  const turnRight=()=>{
-      if(si>=1){
-          si--;
-      }
-      else{
-          si=right.length-1;
-          function sttmot(i){
-              setTimeout(function(){right[i].style.zIndex="auto";},300);
-          }
-          for(var i=0;i<right.length;i++){
-              right[i].className="right";
-              sttmot(i);
-              z=1;
-          }
-      }
-      right[si].classList.add("flip");
-      z++;
-      right[si].style.zIndex=z;
+  // const orderPages=()=>{
+  //   $(".page").sort(function (a, b) {
+  //       return parseInt(a.id) - parseInt(b.id);
+  //   }).each(function () {
+  //       var pages = $(this);
+  //       pages.remove();
+  //       $(pages).appendTo(".book");
+  //       for(var i = 0; i < pages.length; i++)
+  //       {
+  //         var page = pages[i];
+  //         if (i % 2 === 0)
+  //         {
+  //           page.style.zIndex = (pages.length - i);
+  //         }
+  //       }
+  //   });
+  // }
+
+  const pageInitialize=()=>{
+    var pages=$(".page");
+    for(var i = 0; i < pages.length; i++)
+    {
+      var page = pages[i];
+      page.id=i + 1;
+      if (i % 2 === 0)
+        {
+          console.log(pages.length - i);
+          page.style.zIndex = (pages.length - i);
+         
+        }
+    }
+    $(".page:not([id])").remove();
   }
 
+  const pageTurn=(nameVal)=>{
+    var pageID = $(`[name=${nameVal}]`).id;
+    if (pageID % 2 === 0){
+      $(`[name=${nameVal}]`).removeClass('flipped');
+      $(`[name=${nameVal}]`).prev().removeClass('flipped');
+    }else{
+      $(`[name=${nameVal}]`).addClass('flipped');
+      $(`[name=${nameVal}]`).next().addClass('flipped');
+    }
+
+  }
+
+
+  // var pages = document.getElementsByClassName('page');
+  // for(var i = 0; i < pages.length; i++)
+  //   {
+  //     var page = pages[i];
+  //     if (i % 2 === 0)
+  //       {
+  //         page.style.zIndex = (pages.length - i);
+  //       }
+  //   }
+
+  // document.addEventListener('DOMContentLoaded', function(){
+  //   for(var i = 0; i < pages.length; i++)
+  //     {
+  //       //Or var page = pages[i];
+  //       pages[i].pageNum = i + 1;
+  //       pages[i].onclick=function()
+  //         {
+  //           if (this.pageNum % 2 === 0)
+  //             {
+  //               this.classList.remove('flipped');
+  //               this.previousElementSibling.classList.remove('flipped');
+  //             }
+  //           else
+  //             {
+  //               this.classList.add('flipped');
+  //               this.nextElementSibling.classList.add('flipped');
+  //             }
+  //          }
+  //       }
+  // })
+  const spinnerLoad =()=>{
+    setTimeout(function () {
+      $(".spinnerBG").hide(); 
+    }, 3000);
+  }
 
   return (
     <div className="Gallery" id="gallery" style={{ zIndex: 0, backgroundColor: "black" }}>
-      <div className="grid-container">
+      <div id="spinnerBG" className='spinnerBG'  onLoad={spinnerLoad()}>
+        <div id="floatingBarsG">
+          <img src="images/loaders.png"></img>
+        </div>
+      </div>
+      <div className="grid-gallery">
         {allImages.map((image) => {
             return (
               <img className="grid-item" src={image} id={getName(image)} />
             );
         })}
       </div>
-      <div className="book-section">
-       <p>Illustrations by <a href="http://artisticdesigning.com" target="_blank">Nidhanshu Sharma</a></p>
-        <div className="container">
-           <div className="right">
-                <figure className="back" id="back-cover"></figure>
-                <figure className="front" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/angry_man.jpg)"}}></figure>
-            </div>
-            <div className="right">
-                <figure className="back" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/angry_man.jpg)"}}></figure>
-                <figure className="front" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/sunset_landscape.jpg)"}}></figure>
-            </div>
-            <div className="right">
-                <figure className="back" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/sunset_landscape.jpg)"}}></figure>
-                <figure className="front" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/intex_speakers.jpg)"}}></figure>
-            </div>
-            <div className="right">
-                <figure className="back" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/intex_speakers.jpg)"}}></figure>
-                <figure className="front" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/doraemon_nobita_aged.jpg)"}}></figure>
-            </div>
-            <div className="right">
-                <figure className="back" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/doraemon_nobita_aged.jpg)"}}></figure>
-                <figure className="front" style={{backgroundImage: "url(http://artisticdesigning.com/Drawings/Photoshopped/narendra_modi_caricature.jpg)"}}></figure>
-            </div>
-            <div className="right">
-                <figure className="back" style={{backgroundImage: "url('http://artisticdesigning.com/Drawings/Photoshopped/narendra_modi_caricature.jpg')"}}></figure>
-                <figure className="front" id="cover">
-                    <h1>Book Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, modi.</p>
-                </figure>
-            </div>
+      <div className="book">
+        <div className="pages" id="pages" onLoad={pageInitialize()}>
+            {allImages.map((image) => {
+                return (
+                    <div className="page" name={getName(image)} style={{backgroundImage:`url(${image})`}} onClick={()=>pageTurn(getName(image))}></div>
+                );
+            })}
         </div>
-        <button onclick={()=>turnLeft()}>Prev</button> <button onclick={()=>turnRight()}>Next</button>
-        <br/>
-    </div>
+      </div>
+      {/* <Footer /> */}
     </div>
   )
 }
