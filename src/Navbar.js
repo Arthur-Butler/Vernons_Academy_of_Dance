@@ -32,6 +32,7 @@ function Navbar(){
     <div className='navbar'>
         <div className="navBtn" onClick={()=>navMenu()}><FaBars /></div>
         <div className="headComp">
+          <img className="navLogo" src="images/logo.png"></img>
           <Link
             to="/"
             className="nav"

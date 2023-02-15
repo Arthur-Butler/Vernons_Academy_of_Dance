@@ -126,30 +126,36 @@ function Gallery() {
       id="gallery"
       style={{ zIndex: 0, backgroundColor: "black" }}
     >
-      <div id="spinnerBG" className="spinnerBG" onLoad={spinnerLoad()}>
-        <div id="floatingBarsG">
-          <img src="images/loaders.png"></img>
+      <div className="galleryBG">
+        <img className="bgImages" src="images/2.jpg"></img>
+        <img className="bgImages" src="images/3.jpg"></img>
+      </div>
+      <div className="galleryForeground">
+        <div id="spinnerBG" className="spinnerBG" onLoad={spinnerLoad()}>
+          <div id="floatingBarsG">
+            <img src="images/loaders.png"></img>
+          </div>
         </div>
-      </div>
-      <div className="grid-gallery">
-        {allImages.map((image) => {
-          return <img className="grid-item" src={image} id={getName(image)} />;
-        })}
-      </div>
-      <div className="book">
-        <div className="pages" id="pages" onLoad={pageInitialize()}>
+        <div className="grid-gallery">
           {allImages.map((image) => {
-            return (
-              <div
-                className="page"
-                name={getName(image)}
-                style={{ backgroundImage: `url(${image})` }}
-                onClick={() => pageTurn(getName(image))}
-              ></div>
-            );
+            return <img className="grid-item" src={image} id={getName(image)} />;
           })}
         </div>
-      </div>
+        {/* <div className="book">
+          <div className="pages" id="pages" onLoad={pageInitialize()}>
+            {allImages.map((image) => {
+              return (
+                <div
+                  className="page"
+                  name={getName(image)}
+                  style={{ backgroundImage: `url(${image})` }}
+                  onClick={() => pageTurn(getName(image))}
+                ></div>
+              );
+            })}
+          </div>
+        </div> */}
+        </div>
       {/* <Footer /> */}
     </div>
   );
