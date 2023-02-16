@@ -14,6 +14,7 @@ function AboutMe() {
   const spinnerLoad = () => {
     setTimeout(function () {
       $(".spinnerBG").hide();
+      $(".aboutMePar").addClass("loaded");
     }, 3000);
   };
 

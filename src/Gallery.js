@@ -136,9 +136,19 @@ function Gallery() {
             <img src="images/loaders.png"></img>
           </div>
         </div>
+        <div className="galleryPar">
+          <p>
+            At Vernon's Academy of Dance we are like a little family. Over the
+            many years we have laughed together and cried together and all these
+            important memories are recorded. Every family needs a photo album.
+            Maybe someday you will become part of the family too!
+          </p>
+        </div>
         <div className="grid-gallery">
           {allImages.map((image) => {
-            return <img className="grid-item" src={image} id={getName(image)} />;
+            return (
+              <img className="grid-item" src={image} id={getName(image)} />
+            );
           })}
         </div>
         {/* <div className="book">
@@ -155,7 +165,7 @@ function Gallery() {
             })}
           </div>
         </div> */}
-        </div>
+      </div>
       {/* <Footer /> */}
     </div>
   );
