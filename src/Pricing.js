@@ -164,7 +164,12 @@ function Pricing() {
             </center>
             <label className="bookingDiv">
               <div className="bookingLabel">ENTER FULL-NAME:</div>
-              <input type="text" name="from_name" className="from_name input" />
+              <input
+                type="text"
+                name="from_name"
+                className="from_name input"
+                required
+              />
             </label>
             <label className="bookingDiv">
               <div className="bookingLabel">
@@ -178,11 +183,21 @@ function Pricing() {
             </label>
             <label className="bookingDiv">
               <div className="bookingLabel">ENTER CONTACT NUMBER:</div>
-              <input type="text" name="phone" className="phone input" />
+              <input
+                type="text"
+                name="phone"
+                className="phone input"
+                required
+              />
             </label>
             <label className="bookingDiv">
               <div className="bookingLabel">ENTER EMAIL ADDRESS:</div>
-              <input type="text" name="email" className="email input" />
+              <input
+                type="email"
+                name="email"
+                className="email input"
+                required
+              />
             </label>
             <label className="bookingDiv">
               <div className="bookingLabel">DESIRED LESSON TYPE:</div>
@@ -196,7 +211,7 @@ function Pricing() {
             <center>
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey="6LdCepkbAAAAAIXFZlcSSOGgApA0M5AkArDX_3io"
+                sitekey="6LdM5j4gAAAAAH3U7CcXByrTcve-8ByypYcG1547"
                 onChange={onChange}
                 onExpired={onExpire}
               />

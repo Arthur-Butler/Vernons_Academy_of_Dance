@@ -109,20 +109,30 @@ function ContactUs() {
             <hr />
             <label className="contactDiv">
               <div className="contactLabel">ENTER FULL-NAME:</div>
-              <input type="text" name="from_name" className="from_name input" />
+              <input
+                type="text"
+                name="from_name"
+                className="from_name input"
+                required
+              />
             </label>
             <label className="contactDiv">
               <div className="contactLabel">ENTER EMAIL ADDRESS:</div>
-              <input type="text" name="email" className="email input" />
+              <input
+                type="email"
+                name="email"
+                className="email input"
+                required
+              />
             </label>
             <label className="contactDiv">
               <div className="contactLabel">LEAVE A MESSAGE:</div>
-              <textarea name="message" className="message"></textarea>
+              <textarea name="message" className="message" required></textarea>
             </label>
             <center>
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey="6LdCepkbAAAAAIXFZlcSSOGgApA0M5AkArDX_3io"
+                sitekey="6LdM5j4gAAAAAH3U7CcXByrTcve-8ByypYcG1547"
                 onChange={onChange}
                 onExpired={onExpire}
               />
