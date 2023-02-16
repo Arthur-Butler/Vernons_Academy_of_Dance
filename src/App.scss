@@ -21,6 +21,8 @@ html {
   width: 30%;
   margin-top: 5%;
   margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aboutMePar p {
@@ -167,12 +169,19 @@ html {
   box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
   width: 70%;
   transform: rotateX(16deg);
-  margin-right: 100%;
-  top: 30%;
+  margin-right: 200%;
+  margin-top: 20%;
+  color: white;
 }
 
-.loaded {
+.loadedLeft {
   animation-name: slideInLeft;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.loadedRight {
+  animation-name: slideInRight;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
@@ -183,6 +192,15 @@ html {
   }
   to {
     margin-left: 0%;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    margin-right: 200%;
+  }
+  to {
+    margin-right: 0%;
   }
 }
 
@@ -547,6 +565,7 @@ p {
 
 .bookingDescription {
   padding: 10px;
+  margin-left: 100%;
 }
 
 .bookingFormBG {
@@ -635,8 +654,6 @@ p {
 
 .bookingDescription {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   width: 80%;
   margin-top: 15%;
   font-size: 30px;
@@ -658,7 +675,7 @@ p {
 .grid-gallery {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  margin-top: 400%;
+  margin-top: 20%;
   background-color: rgb(0, 0, 0, 0.8);
 }
 
@@ -1131,9 +1148,13 @@ input.app-interval-input {
   display: block;
 }
 
+.galleryPar p{
+  font-size: 31px;
+}
+
 .galleryForeground {
   position: absolute;
-  height: 100%;
+  height: fit-content;
   z-index: 2;
   background-color: rgb(0, 0, 0, 0.8);
   width: 100%;
@@ -1142,6 +1163,7 @@ input.app-interval-input {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  top: 0%;
 }
 
 .contact,

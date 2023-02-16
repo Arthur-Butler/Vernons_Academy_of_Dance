@@ -117,6 +117,7 @@ function Gallery() {
   const spinnerLoad = () => {
     setTimeout(function () {
       $(".spinnerBG").hide();
+      $(".galleryPar").addClass("loadedRight");
     }, 3000);
   };
 
@@ -143,6 +144,7 @@ function Gallery() {
             important memories are recorded. Every family needs a photo album.
             Maybe someday you will become part of the family too!
           </p>
+          <hr class="aboutMeHR"></hr>
         </div>
         <div className="grid-gallery">
           {allImages.map((image) => {

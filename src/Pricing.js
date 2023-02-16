@@ -80,6 +80,7 @@ function Pricing() {
   const spinnerLoad = () => {
     setTimeout(function () {
       $(".spinnerBG").hide();
+      $(".bookingDescription").addClass("loadedLeft");
     }, 3000);
   };
 
