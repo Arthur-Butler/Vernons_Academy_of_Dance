@@ -43,6 +43,7 @@ html {
   width: 90%;
   height: 100%;
   margin-top: 10%;
+  margin-bottom: 5%;
 }
 
 .fullHeader {
@@ -694,6 +695,7 @@ p {
   bottom: 0%;
   left: 0%;
   right: 0%;
+  overflow-x: hidden;
 }
 
 .play-button {
@@ -1138,6 +1140,7 @@ input.app-interval-input {
   z-index: 2;
   position: absolute;
   background-color: rgb(0, 0, 0, 0.8);
+  overflow-x: hidden;
 }
 
 .app-checkboxes {
@@ -1185,7 +1188,7 @@ form {
   align-items: center;
   text-align: center;
   top: 0%;
-  height: 100%;
+  overflow-x: hidden;
 }
 
 .contactHeader {
