@@ -47,8 +47,8 @@ function AboutMe() {
             You will come to discover that I am a dedicated teacher who will do everything in my power to make sure my students succeed and progress.
             Dancing is an art form that requires concentration, dedication, and attention to detail to master and perfect. You must be prepared to give it your all and as your instructor, I shall do my best to match your enthusiasm.
             </p>
-            <FaReadme className="bookIcon" />
           </div>
+          <FaReadme className="bookIcon" />
           <br />
           <Footer />
         </center>

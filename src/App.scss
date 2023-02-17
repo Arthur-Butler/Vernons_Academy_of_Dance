@@ -26,7 +26,9 @@ html {
 }
 
 .aboutMePar p {
+  width:70%;
   font-size: 140%;
+  color:black!important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -155,11 +157,12 @@ html {
   display: block;
   padding-top: 2%;
   padding-bottom: 2%;
-  background-image: url("../public/images/scrollBG.png");
+  background-image: url("https://png.pngtree.com/png-clipart/20221030/ourmid/pngtree-black-empty-ancient-chinese-scroll-illustration-png-image_6388203.png");
   background-size:100%;
   background-repeat:no-repeat;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
-  width: 70%;
+  width: 60%;
+  height:fit-content;
   transform: rotateX(16deg);
   margin-left: 100%;
 }
