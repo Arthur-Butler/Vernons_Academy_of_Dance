@@ -103,8 +103,7 @@ function Pricing() {
           <a className="links" href="/booking">
             contact me
           </a>
-          . The purpose of this page is simply to book lessons so I may booking
-          you.
+          . The purpose of this page is simply to book lessons so I may ascertain if and where I can fit you in and get back to you promptly.
         </p>
         <hr className="aboutMeHR" />
         <div className="lessonInfo">

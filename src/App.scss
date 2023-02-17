@@ -155,7 +155,9 @@ html {
   display: block;
   padding-top: 2%;
   padding-bottom: 2%;
-  background-color: #000;
+  background-image: url("../public/images/scrollBG.png");
+  background-size:100%;
+  background-repeat:no-repeat;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
   width: 70%;
   transform: rotateX(16deg);
