@@ -20,6 +20,10 @@ function Landing(props) {
     };
   }, []);
 
+  const unhideNav=()=>{
+    $(".hideNav").css("display","flex");
+  }
+
   const [hideLogin, setHideLogin] = useState(true);
 
   const Display = () => {
@@ -39,7 +43,7 @@ function Landing(props) {
                 </h3>
               </div>
             </div>
-            <button id="openBtn" className="btn-3">
+            <button id="openBtn" className="btn-3" onClick={()=>unhideNav()}>
               <span>open</span>
             </button>
           </div>

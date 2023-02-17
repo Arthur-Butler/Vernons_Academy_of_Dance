@@ -481,6 +481,14 @@ ReCAPTCHA {
   }
 }
 
+.hideNav{
+  display:none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
 .nav:visited {
   text-decoration: underline;
 }
