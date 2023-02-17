@@ -26,9 +26,10 @@ html {
 }
 
 .aboutMePar p {
-  width:70%;
+  width: 100%;
   font-size: 140%;
-  color:black!important;
+  color:white!important;
+  margin-top:10%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -153,17 +154,34 @@ html {
   }
 }
 
+.readMoreBtn{
+  display:none;
+  background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	outline: inherit;
+}
+
 .aboutMePar {
-  display: block;
+  display: inline-block;
   padding-top: 2%;
   padding-bottom: 2%;
-  background-image: url("https://png.pngtree.com/png-clipart/20221030/ourmid/pngtree-black-empty-ancient-chinese-scroll-illustration-png-image_6388203.png");
-  background-size:100%;
+  background-color:black;
+  border-left: 10px double white;
+  border-right: 10px double white;
   background-repeat:no-repeat;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
-  width: 60%;
+  width: 50%;
   height:fit-content;
   transform: rotateX(16deg);
+  margin-top: -3%;
+  margin-bottom: -3%;
+}
+
+.scroll{
+  display:block;
+  width:100%;
   margin-left: 100%;
 }
 
@@ -178,6 +196,10 @@ html {
   margin-right: 200%;
   margin-top: 20%;
   color: white;
+}
+
+.scrollHandle{
+  width: 65%;
 }
 
 .loadedLeft {
@@ -516,6 +538,19 @@ ReCAPTCHA {
   background-repeat: no-repeat;
 }
 
+.cerification{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  width:95%;
+  margin-bottom:10%;
+}
+
+.certificates{
+  width:30%;
+  border:10px solid black;
+}
+
 .aboutMeHead {
   font-size: 70px;
   padding-bottom: 2%;
@@ -785,6 +820,19 @@ p {
 }
 
 @media (max-width: 425px) {
+  .readMoreBtn{
+    display:inline-block;
+  }
+
+  .morePar{
+    display:none;
+  }
+
+  .aboutMePar{
+    margin-top: -11%;
+    margin-bottom: -15%;
+  }
+
   .grid-gallery {
     display: grid;
     grid-template-columns: auto auto;
@@ -860,6 +908,17 @@ p {
 
   .lessons p {
     font-size: 15px !important;
+  }
+
+  .cerification{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+  }
+
+  .certificates{
+    width:80%;
   }
 }
 
@@ -1146,6 +1205,7 @@ input.app-interval-input {
   position: absolute;
   background-color: rgb(0, 0, 0, 0.8);
   overflow-x: hidden;
+  top: 0%;
 }
 
 .app-checkboxes {
