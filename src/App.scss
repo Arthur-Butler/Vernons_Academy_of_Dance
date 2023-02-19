@@ -828,6 +828,11 @@ p {
 }
 
 @media (max-width: 425px) {
+  .App-header{
+    background-image: url(../public/images/1.jpg), url(../public/images/2.jpg) !important;
+    background-size: 100% !important;
+  }
+
   .readMoreBtn{
     display:inline-block;
   }
